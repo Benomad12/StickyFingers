@@ -1,0 +1,21 @@
+.itemlistcontainer{
+    padding: 20rem 10rem;
+    background-color: rgb(209, 209, 209);
+}
+.itemlist{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item{
+    border-radius: 0.5rem;
+    background-color: rgb(250, 247, 247);
+    p{
+        text-align: left;
+        padding: 0.2rem;
+        font-family:sans-serif;
+        font-weight: 3400;
+    }}
+    .imagee{
+        border-radius: 2rem;
+    }
