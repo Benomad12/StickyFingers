@@ -1,17 +1,27 @@
 import { useState, useEffect } from "react";
 import { GetProducts } from "../../data/data";
 import ItemList from "./ItemList";
-import Item from "./Item";
+import { useParams } from "react-router-dom";
 import "./itemlistcontainer.css"
 
 
 const ItemListContainer = ({greeting}) => {
 const [products, setProducts] = useState ([])
 
+const {idCategory} = useParams()
+
+
+
 useEffect(()=>{
     GetProducts()
     .then((data)=>{
-        setProducts (data)
+        if(idCategory){
+            const filterProducts = data.filter((product)=> product.Category === idCategory)
+            setProducts (filterProducts)
+        }else{
+            setProducts (data)
+        }
+        
     })
     .catch((error)=>{
         console.log(error);
@@ -19,7 +29,7 @@ useEffect(()=>{
     .finally(()=>{ 
         console.log("termino la promesa");
         })
-}, [])
+}, [idCategory])
 
         return (
         <div className="itemlistcontainer">

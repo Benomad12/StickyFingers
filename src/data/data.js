@@ -2,7 +2,7 @@ const products = [
     {
         id:"31456",
         name: "Electric guitar",
-        description: "",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque iste molestiae aliquam ullam a dicta laborum praesentium quo tenetur velit repellat doloribus voluptates aspernatur, ex quas qui delectus. Explicabo, delectus!",
         image: "https://www.maxiaxi.de/media/catalog/product/cache/3e7997d40e92deb713a3463981f7aa3d/1/7/173236_co3_rgb.webp",
         Price:300,
         Stock: 30,
@@ -42,14 +42,32 @@ const products = [
         Price:2300,
         Stock: 20,
         Category: "Dj-Controller",
-    },       
+    }, 
     {
         id:"36456",
+        name: "Pioneer Cdj- 2000 nexus 2",
+        description: "",
+        image: "https://www.colognestreetmarket.de/wp-content/uploads/2020/03/2A530D09-C173-437E-98EA-54EF9F25378E-768x768.webp",
+        Price:2300,
+        Stock: 20,
+        Category: "Dj-Controller",
+    },            
+    {
+        id:"37456",
         name: "Beyerdynamic DT-990 Pro",
         description: "",
         image: "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_10/106865/18443258_800.jpg",
         Price:3003,
         Stock: 60,
+        Category: "Headphones",
+    },
+    {
+        id:"38456",
+        name: "Beyerdynamic DT-1990 Pro",
+        description: "",
+        image: "https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_60/601698/19537732_800.jpg",
+        Price:32003,
+        Stock: 40,
         Category: "Headphones",
     }
 ]

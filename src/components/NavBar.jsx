@@ -1,29 +1,22 @@
 import Cartwidget from "./Cartwidget"
 import './navbar.css'
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
     return (
-        <div class="padre">
-            <div>
-            <h1>Sticky Finger</h1>
-            <div class="carwidget"><Cartwidget/></div>
-            
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" href="#">GUITAR</a>
-                <a class="nav-link" href="#">DRUMS</a>
-                <a class="nav-link" href="#">DJ-CONTROLLER</a>
-                <a class="nav-link" href="#">HEADPHONES</a>
-            </div>
-            </div>
-    </div>
-</nav>
-</div>
+<div class="padre">
+    <Link to='/' className="title">
+        <p className="h1">Sticky Finger</p>
+    </Link>
+        <div class="carwidget"><Cartwidget/></div>
+            <nav className='navbar'>
+                <ul className="categories">
+                    <Link to="Category/Guitar" className="Category">Guitars</Link>
+                    <Link to="Category/Drums" className="Category">Drums</Link>
+                    <Link to="Category/Dj-Controller" className="Category">Dj-Equipament</Link>
+                    <Link to="Category/Headphones" className="Category">Headphones</Link>
+                </ul>
+            </nav>
 </div>
 )
 }
