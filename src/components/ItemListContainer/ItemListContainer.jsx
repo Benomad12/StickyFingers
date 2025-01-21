@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { GetProducts } from "../../data/data";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import{collection, getDocs} from "firebase/firestore"
+import db from "../../db/db.js";
 import "./itemlistcontainer.css"
 
 
@@ -12,23 +13,26 @@ const {idCategory} = useParams()
 
 
 
-useEffect(()=>{
-    GetProducts()
-    .then((data)=>{
-        if(idCategory){
-            const filterProducts = data.filter((product)=> product.Category === idCategory)
-            setProducts (filterProducts)
-        }else{
-            setProducts (data)
-        }
+const collectionName = collection(db, "products")
+
+const getProducts = async()=> {
+    try{
+        const dataDb= await getDocs(collectionName)
         
-    })
-    .catch((error)=>{
-        console.log(error);
-    })
-    .finally(()=>{ 
-        console.log("termino la promesa");
-        })
+        const data = dataDb.docs.map((productDb)=> {
+            return{id: productDb.id, ...productDb.data()}
+})
+    setProducts(data)
+} 
+catch (error){
+        console.log(error)}
+    }
+
+
+
+
+useEffect(()=>{
+    getProducts()
 }, [idCategory])
 
         return (
